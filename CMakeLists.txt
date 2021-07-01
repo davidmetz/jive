@@ -1,0 +1,85 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(libjive)
+
+add_library(jive STATIC
+        # RVSDG core
+        src/common.cpp
+        src/rvsdg/binary.cpp
+        src/rvsdg/control.cpp
+        src/rvsdg/equivalence.cpp
+        src/rvsdg/gamma.cpp
+        src/rvsdg/graph.cpp
+        src/rvsdg/label.cpp
+        src/rvsdg/negotiator.cpp
+        src/rvsdg/node-normal-form.cpp
+        src/rvsdg/node.cpp
+        src/rvsdg/notifiers.cpp
+        src/rvsdg/nullary.cpp
+        src/rvsdg/operation.cpp
+        src/rvsdg/phi.cpp
+        src/rvsdg/region.cpp
+        src/rvsdg/resource.cpp
+        src/rvsdg/simple-normal-form.cpp
+        src/rvsdg/simple-node.cpp
+        src/rvsdg/statemux.cpp
+        src/rvsdg/splitnode.cpp
+        src/rvsdg/structural-normal-form.cpp
+        src/rvsdg/structural-node.cpp
+        src/rvsdg/theta.cpp
+        src/rvsdg/tracker.cpp
+        src/rvsdg/traverser.cpp
+        src/rvsdg/type.cpp
+        src/rvsdg/unary.cpp
+        #evaluation
+        src/evaluator/eval.cpp
+        src/evaluator/literal.cpp
+        # visualization
+        src/util/callbacks.cpp
+        src/view.cpp
+        # bitstrings
+        src/types/bitstring/arithmetic.cpp
+        src/types/bitstring/bitoperation-classes.cpp
+        src/types/bitstring/comparison.cpp
+        src/types/bitstring/concat.cpp
+        src/types/bitstring/constant.cpp
+        src/types/bitstring/slice.cpp
+        src/types/bitstring/type.cpp
+        src/types/bitstring/value-representation.cpp
+        # floats
+        src/types/float/arithmetic.cpp
+        src/types/float/comparison.cpp
+        src/types/float/fltconstant.cpp
+        src/types/float/fltoperation-classes.cpp
+        src/types/float/flttype.cpp
+        # records
+        src/types/record.cpp
+        # unions
+        src/types/union.cpp
+        # functions
+        src/types/function.cpp
+        # arch definitions
+        src/arch/address-transform.cpp
+        src/arch/address.cpp
+        src/arch/addresstype.cpp
+        src/arch/call.cpp
+        src/arch/compilate.cpp
+        src/arch/dataobject.cpp
+        src/arch/immediate.cpp
+        src/arch/instruction.cpp
+        src/arch/instructionset.cpp
+        src/arch/label-mapper.cpp
+        src/arch/load.cpp
+        src/arch/memlayout-simple.cpp
+        src/arch/memlayout.cpp
+        src/arch/registers.cpp
+        src/arch/regselector.cpp
+        src/arch/regvalue.cpp
+        src/arch/sizeof.cpp
+        src/arch/stackslot.cpp
+        src/arch/store.cpp
+        src/arch/subroutine.cpp
+        src/arch/subroutine/nodes.cpp
+        )
+
+target_include_directories(jive PUBLIC include)
